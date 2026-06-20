@@ -4,7 +4,7 @@
             "outputFile": "br.edu.ifsulminas.mch.homeworkhelper.app-mergeDebugResources-32:/values-w820dp-v13/values-w820dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\41279517883\\PDM\\ProjetosAndroid-2026\\App-Final-V1-Homework-helper\\app\\src\\main\\res\\values-w820dp\\strings.xml",
+                    "source": "C:\\Users\\Lucas\\StudioProjects\\App-Final-V1-Homework-helper\\app\\src\\main\\res\\values-w820dp\\strings.xml",
                     "from": {
                         "startLines": "3,2",
                         "startColumns": "4,4",

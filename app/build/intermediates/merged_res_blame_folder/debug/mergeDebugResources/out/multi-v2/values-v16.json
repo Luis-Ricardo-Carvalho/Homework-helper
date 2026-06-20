@@ -4,17 +4,7 @@
             "outputFile": "br.edu.ifsulminas.mch.homeworkhelper.app-mergeDebugResources-32:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\41279517883\\.gradle\\caches\\9.4.1\\transforms\\e1fbdfc981da7ef50f7b49915b15c46c\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\41279517883\\.gradle\\caches\\9.4.1\\transforms\\b4b76941720fad3b66834edd2aeb0052\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\Lucas\\.gradle\\caches\\9.4.1\\transforms\\b4b76941720fad3b66834edd2aeb0052\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -30,6 +20,16 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Lucas\\.gradle\\caches\\9.4.1\\transforms\\e1fbdfc981da7ef50f7b49915b15c46c\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
                     }
                 }
             ]

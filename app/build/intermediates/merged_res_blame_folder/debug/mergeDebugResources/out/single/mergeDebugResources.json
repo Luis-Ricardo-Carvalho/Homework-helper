@@ -100,6 +100,14 @@
         "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-36:/drawable/ic_launcher_foreground.xml"
     },
     {
+        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-34:/layout_activity_index.xml.flat",
+        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-36:/layout/activity_index.xml"
+    },
+    {
+        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-34:/layout_activity_form_subject.xml.flat",
+        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-36:/layout/activity_form_subject.xml"
+    },
+    {
         "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-34:/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-36:/mipmap-xxxhdpi/ic_launcher.png"
     }

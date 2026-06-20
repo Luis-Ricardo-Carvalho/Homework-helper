@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/main"
-    tools:context="br.edu.ifsulminas.mch.homeworkhelper.MainActivity">
+    tools:context="br.edu.ifsulminas.mch.homeworkhelper.MainActivity"
+    android:id="@+id/main">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
