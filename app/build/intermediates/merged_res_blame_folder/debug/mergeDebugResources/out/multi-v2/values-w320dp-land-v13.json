@@ -4,7 +4,7 @@
             "outputFile": "br.edu.ifsulminas.mch.homeworkhelper.app-mergeDebugResources-33:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/home/estudos/.gradle/caches/9.4.1/transforms/6b2a2de0d7dbf5c61c468b3eea5efc13/transformed/material-1.10.0/res/values-w320dp-land-v13/values-w320dp-land-v13.xml",
+                    "source": "C:\\Users\\gabri\\.gradle\\caches\\9.4.1\\transforms\\6b2a2de0d7dbf5c61c468b3eea5efc13\\transformed\\material-1.10.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

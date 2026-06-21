@@ -1,9 +1,9 @@
-#Sun Jun 21 17:38:19 BRT 2026
-base.0=/home/estudos/AndroidStudioProjects/App-Final-V1-Homework-helper/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
-base.1=/home/estudos/AndroidStudioProjects/App-Final-V1-Homework-helper/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.2=/home/estudos/AndroidStudioProjects/App-Final-V1-Homework-helper/app/build/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex
-base.3=/home/estudos/AndroidStudioProjects/App-Final-V1-Homework-helper/app/build/intermediates/dex/debug/mergeProjectDexDebug/4/classes.dex
-base.4=/home/estudos/AndroidStudioProjects/App-Final-V1-Homework-helper/app/build/intermediates/dex/debug/mergeProjectDexDebug/5/classes.dex
+#Sun Jun 21 20:37:06 BRT 2026
+base.0=C\:\\Users\\gabri\\Desktop\\PDM\\AndroidStudioProjects\\ProjetoFinal\\App-Final-V1-Homework-helper\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\gabri\\Desktop\\PDM\\AndroidStudioProjects\\ProjetoFinal\\App-Final-V1-Homework-helper\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\gabri\\Desktop\\PDM\\AndroidStudioProjects\\ProjetoFinal\\App-Final-V1-Homework-helper\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
+base.3=C\:\\Users\\gabri\\Desktop\\PDM\\AndroidStudioProjects\\ProjetoFinal\\App-Final-V1-Homework-helper\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
+base.4=C\:\\Users\\gabri\\Desktop\\PDM\\AndroidStudioProjects\\ProjetoFinal\\App-Final-V1-Homework-helper\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=14/classes.dex
