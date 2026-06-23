@@ -16,7 +16,7 @@
     <string name="fab_description">Adiconar Tarefa</string>
     <string name="save_task">Salvar</string>
     <string name="subject_name">Nome da Diciplina</string>
-    <string name="subject_schoolYear">Escolaridade da Diciplina</string>
+    <string name="subject_schoolYear">Ano da Diciplina</string>
     <string name="subject_teacher">Nome do Professor</string>
     <string name="task_date">Limite</string>
     <string name="task_description">Descrição da Atividade</string>
