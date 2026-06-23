@@ -13,14 +13,20 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
 
     private final List<Subject> subjects;
     private final OnItemClickListener listener;
+    private final OnItemLongClickListener longClickListener;
 
     public interface OnItemClickListener {
         void onItemClick(Subject subject);
     }
 
-    public SubjectAdapter(List<Subject> subjects, OnItemClickListener listener) {
+    public interface OnItemLongClickListener {
+        void onItemLongClick(Subject subject);
+    }
+
+    public SubjectAdapter(List<Subject> subjects, OnItemClickListener listener, OnItemLongClickListener longClickListener) {
         this.subjects = subjects;
         this.listener = listener;
+        this.longClickListener = longClickListener;
     }
 
     @NonNull
@@ -34,7 +40,7 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
     @Override
     public void onBindViewHolder(@NonNull SubjectViewHolder holder, int position) {
         Subject subject = subjects.get(position);
-        holder.bind(subject, listener);
+        holder.bind(subject, listener, longClickListener);
     }
 
     @Override
@@ -52,12 +58,16 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
             txtDetails = itemView.findViewById(R.id.txtSubjectDetails);
         }
 
-        public void bind(final Subject subject, final OnItemClickListener listener) {
-            // Ajuste aqui com os métodos reais da sua classe Subject (ex: getName())
-            txtName.setText(subject.toString());
-            txtDetails.setText("Toque para editar/ver");
+        public void bind(Subject subject, OnItemClickListener listener, OnItemLongClickListener longClickListener) {
+            txtName.setText(subject.getName());
+            txtDetails.setText(subject.getTeacher() + " • " + subject.getSchoolYear());
 
             itemView.setOnClickListener(v -> listener.onItemClick(subject));
+
+            itemView.setOnLongClickListener(v -> {
+                longClickListener.onItemLongClick(subject);
+                return true;
+            });
         }
     }
 }

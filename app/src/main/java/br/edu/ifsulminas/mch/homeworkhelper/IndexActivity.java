@@ -2,9 +2,9 @@ package br.edu.ifsulminas.mch.homeworkhelper;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.LinearLayout;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -45,7 +45,6 @@ public class IndexActivity extends AppCompatActivity {
         });
 
         subject_list = findViewById(R.id.subject_list);
-
         subject_list.setLayoutManager(new LinearLayoutManager(this));
     }
 
@@ -59,13 +58,28 @@ public class IndexActivity extends AppCompatActivity {
         SubjectDAO dao = new SubjectDAO(this);
         List<Subject> subjects = dao.listAll();
 
-        SubjectAdapter adapter = new SubjectAdapter(subjects, subject -> {
-            Intent mainActIntent = new Intent(IndexActivity.this, MainActivity.class);
-
-            mainActIntent.putExtra("SUBJECT_SELECTED", subject);
-
-            startActivity(mainActIntent);
-        });
+        SubjectAdapter adapter = new SubjectAdapter(
+                subjects,
+                subject -> {
+                    // clique simples — abre MainActivity
+                    Intent mainActIntent = new Intent(IndexActivity.this, MainActivity.class);
+                    mainActIntent.putExtra("SUBJECT_SELECTED", subject);
+                    startActivity(mainActIntent);
+                },
+                subject -> {
+                    // long press — confirma e apaga
+                    new AlertDialog.Builder(IndexActivity.this)
+                            .setTitle("Excluir Disciplina")
+                            .setMessage("Deseja excluir a disciplina \"" + subject.getName() + "\"?")
+                            .setPositiveButton("Excluir", (dialog, which) -> {
+                                SubjectDAO deleteDao = new SubjectDAO(IndexActivity.this);
+                                deleteDao.delete(subject);
+                                updateSubjectList();
+                            })
+                            .setNegativeButton("Cancelar", null)
+                            .show();
+                }
+        );
 
         subject_list.setAdapter(adapter);
     }
