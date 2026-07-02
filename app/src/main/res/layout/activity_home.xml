@@ -40,6 +40,18 @@
         android:paddingTop="16dp"
         android:paddingBottom="16dp" />
 
+        <Button
+            android:id="@+id/btn_classrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingStart="32dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="32dp"
+            android:paddingBottom="16dp"
+            android:text="Teste Classrom"
+            android:textSize="18sp" />
+
     </LinearLayout>
 
     <FrameLayout

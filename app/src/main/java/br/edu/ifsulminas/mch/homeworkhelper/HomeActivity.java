@@ -32,5 +32,11 @@ public class HomeActivity extends AppCompatActivity {
             Intent intent = new Intent(HomeActivity.this, IndexActivity.class);
             startActivity(intent);
         });
+
+        Button btnClassrom = findViewById(R.id.btn_classrom);
+        btnClassrom.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, ClassromActivity.class);
+            startActivity(intent);
+        });
     }
 }
