@@ -43,6 +43,16 @@
         </activity>
 
         <activity
+            android:name=".ClassromAtividadesActivity"
+            android:exported="false">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ClassromActivity">
+            </meta-data>
+        </activity>
+
+        <activity
             android:name=".FormSubjectActivity"
             android:exported="false">
 

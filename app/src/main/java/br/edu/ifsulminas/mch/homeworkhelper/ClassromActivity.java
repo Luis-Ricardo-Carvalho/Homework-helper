@@ -5,13 +5,15 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -20,16 +22,15 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.classroom.Classroom;
 import com.google.api.services.classroom.ClassroomScopes;
 import com.google.api.services.classroom.model.Course;
-import com.google.api.services.classroom.model.CourseWork;
 import com.google.api.services.classroom.model.ListCoursesResponse;
-import com.google.api.services.classroom.model.ListStudentSubmissionsResponse;
-import com.google.api.services.classroom.model.StudentSubmission;
+import com.google.api.services.classroom.model.UserProfile;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -44,37 +45,67 @@ public class ClassromActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 1001;
     private GoogleSignInClient mGoogleSignInClient;
 
-    private ListView lvTarefas;
-    private ArrayList<String> listaTarefasTexto;
-    private ArrayAdapter<String> adapter;
+    private RecyclerView rvCursos;
+    private ArrayList<Turma> listaTurmas;
+    private ClassroomAdapter adapter;
 
-    // Definição dos escopos necessários (Ver turmas e ver tarefas)
     private static final List<String> SCOPES = Arrays.asList(
             ClassroomScopes.CLASSROOM_COURSES_READONLY,
-            ClassroomScopes.CLASSROOM_COURSEWORK_ME_READONLY
+            ClassroomScopes.CLASSROOM_ROSTERS_READONLY,
+            "profile"
     );
+
+    // --- CLASSE MODELO INTERNA ATUALIZADA ---
+    public static class Turma {
+        private final String id; // ADICIONADO: Guarda o ID único do Google Classroom
+        private final String nome;
+        private final String professor;
+
+        public Turma(String id, String nome, String professor) {
+            this.id = id;
+            this.nome = nome;
+            this.professor = professor;
+        }
+
+        // Métodos Getters
+        public String getId() { return id; }
+        public String getNome() { return nome; }
+        public String getProfessor() { return professor; }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_classrom);
+        setContentView(R.layout.activity_classroom_list);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
         Button btnLogin = findViewById(R.id.btn_login);
-        lvTarefas = findViewById(R.id.lv_tarefas);
+        FloatingActionButton fab = findViewById(R.id.fab);
 
-        listaTarefasTexto = new ArrayList<>();
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaTarefasTexto);
-        lvTarefas.setAdapter(adapter);
+        rvCursos = findViewById(R.id.subject_list);
+        rvCursos.setLayoutManager(new LinearLayoutManager(this));
 
-        // CORRIGIDO: Agora pedindo os escopos específicos do Classroom
+        listaTurmas = new ArrayList<>();
+        adapter = new ClassroomAdapter(listaTurmas);
+        rvCursos.setAdapter(adapter);
+
+        fab.setOnClickListener(v -> {
+            Toast.makeText(this, "Ação do FAB!", Toast.LENGTH_SHORT).show();
+        });
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
-                .requestScopes(new Scope(ClassroomScopes.CLASSROOM_COURSES_READONLY),
-                        new Scope(ClassroomScopes.CLASSROOM_COURSEWORK_ME_READONLY))
+                .requestScopes(
+                        new Scope(ClassroomScopes.CLASSROOM_COURSES_READONLY),
+                        new Scope(ClassroomScopes.CLASSROOM_ROSTERS_READONLY),
+                        new Scope("profile")
+                )
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
         btnLogin.setOnClickListener(v -> iniciarFluxoLogin());
     }
 
@@ -108,7 +139,6 @@ public class ClassromActivity extends AppCompatActivity {
 
         executor.execute(() -> {
             try {
-                // CORRIGIDO: Passando a lista de escopos corretos para a credencial
                 GoogleAccountCredential credential = GoogleAccountCredential.usingOAuth2(
                         ClassromActivity.this,
                         SCOPES
@@ -129,40 +159,30 @@ public class ClassromActivity extends AppCompatActivity {
 
                 List<Course> cursos = coursesResponse.getCourses();
 
-                // Limpa a lista antes de adicionar novas tarefas
-                mainHandler.post(() -> listaTarefasTexto.clear());
+                mainHandler.post(() -> listaTurmas.clear());
 
-                if (cursos != null) {
+                if (cursos != null && !cursos.isEmpty()) {
                     for (Course curso : cursos) {
-                        ListStudentSubmissionsResponse submissionsResponse = service.courses()
-                                .courseWork()
-                                .studentSubmissions()
-                                .list(curso.getId(), "-")
-                                .setUserId("me")
-                                .execute();
+                        String idTurma = curso.getId(); // ADICIONADO: Pega o ID da Turma
+                        String nomeTurma = curso.getName();
+                        String nomeProfessor = "Professor não identificado";
 
-                        List<StudentSubmission> submissoes = submissionsResponse.getStudentSubmissions();
-
-                        if (submissoes != null) {
-                            for (StudentSubmission submissao : submissoes) {
-                                String estado = submissao.getState();
-
-                                if ("CREATED".equals(estado) || "RECLAIMED_BY_STUDENT".equals(estado)) {
-
-                                    CourseWork tarefaCompleta = service.courses()
-                                            .courseWork()
-                                            .get(curso.getId(), submissao.getCourseWorkId())
-                                            .execute();
-
-                                    String exibirTexto = tarefaCompleta.getTitle() + " (" + curso.getName() + ")";
-
-                                    mainHandler.post(() -> {
-                                        listaTarefasTexto.add(exibirTexto);
-                                        adapter.notifyDataSetChanged();
-                                    });
-                                }
+                        try {
+                            UserProfile perfil = service.userProfiles().get(curso.getOwnerId()).execute();
+                            if (perfil != null && perfil.getName() != null) {
+                                nomeProfessor = perfil.getName().getFullName();
                             }
+                        } catch (IOException e) {
+                            Log.e("ClassroomApp", "Não foi possível carregar o nome do professor para: " + nomeTurma, e);
                         }
+
+                        // MODIFICADO: Passando o idTurma para o nosso construtor da classe modelo
+                        Turma novaTurma = new Turma(idTurma, nomeTurma, nomeProfessor);
+
+                        mainHandler.post(() -> {
+                            listaTurmas.add(novaTurma);
+                            adapter.notifyDataSetChanged();
+                        });
                     }
                 } else {
                     mainHandler.post(() -> Toast.makeText(ClassromActivity.this, "Nenhuma turma ativa encontrada.", Toast.LENGTH_SHORT).show());
@@ -170,8 +190,57 @@ public class ClassromActivity extends AppCompatActivity {
 
             } catch (IOException e) {
                 Log.e("ClassroomApp", "Erro ao chamar a API do Classroom", e);
-                mainHandler.post(() -> Toast.makeText(ClassromActivity.this, "Erro ao carregar dados do Classroom.", Toast.LENGTH_SHORT).show());
+                mainHandler.post(() -> Toast.makeText(ClassromActivity.this, "Erro ao carregar turmas.", Toast.LENGTH_SHORT).show());
             }
         });
+    }
+
+    // --- ADAPTADOR DO RECYCLERVIEW ---
+    private static class ClassroomAdapter extends RecyclerView.Adapter<ClassroomAdapter.ViewHolderTurma> {
+        private final List<Turma> dados;
+
+        public ClassroomAdapter(List<Turma> dados) {
+            this.dados = dados;
+        }
+
+        @NonNull
+        @Override
+        public ViewHolderTurma onCreateViewHolder(@NonNull android.view.ViewGroup parent, int viewType) {
+            android.view.View view = android.view.LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_subject, parent, false);
+            return new ViewHolderTurma(view);
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull ViewHolderTurma holder, int position) {
+            Turma turmaAtual = dados.get(position);
+            holder.txtSubjectName.setText(turmaAtual.getNome());
+            holder.txtSubjectDetails.setText(turmaAtual.getProfessor());
+
+            // ADICIONADO: Configura o clique no card de cada matéria
+            holder.itemView.setOnClickListener(v -> {
+                Intent intent = new Intent(v.getContext(), ClassromAtividadesActivity.class);
+                // Enviamos o ID e o Nome coletados para a tela de Atividades
+                intent.putExtra("COURSE_ID", turmaAtual.getId());
+                intent.putExtra("COURSE_NAME", turmaAtual.getNome());
+                v.getContext().startActivity(intent);
+            });
+        }
+
+        @Override
+        public int getItemCount() {
+            return dados.size();
+        }
+
+        public static class ViewHolderTurma extends RecyclerView.ViewHolder {
+            android.widget.TextView txtSubjectName;
+            android.widget.TextView txtSubjectDetails;
+
+            public ViewHolderTurma(@NonNull android.view.View itemView) {
+                super(itemView);
+                txtSubjectName = itemView.findViewById(R.id.txtSubjectName);
+                txtSubjectDetails = itemView.findViewById(R.id.txtSubjectDetails);
+            }
+        }
     }
 }
