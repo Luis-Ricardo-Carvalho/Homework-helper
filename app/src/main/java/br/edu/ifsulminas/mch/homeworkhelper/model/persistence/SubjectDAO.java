@@ -23,6 +23,7 @@ public class SubjectDAO extends DAO {
         values.put(TablesData.Subject.SUBJECT_NAME, subject.getName());
         values.put(TablesData.Subject.TEACHER, subject.getTeacher());
         values.put(TablesData.Subject.SCHOOL_YEAR, subject.getSchoolYear());
+        values.put(TablesData.Subject.COLOR, subject.getColor());
 
         db.insert(TablesData.Subject.NAME, null, values);
         db.close();
@@ -35,6 +36,7 @@ public class SubjectDAO extends DAO {
         values.put(TablesData.Subject.SUBJECT_NAME, subject.getName());
         values.put(TablesData.Subject.TEACHER, subject.getTeacher());
         values.put(TablesData.Subject.SCHOOL_YEAR, subject.getSchoolYear());
+        values.put(TablesData.Subject.COLOR, subject.getColor());
 
         String[] params = {String.valueOf(subject.getId())};
         db.update(TablesData.Subject.NAME, values, TablesData.Subject.PK + "= ?", params);
@@ -59,16 +61,12 @@ public class SubjectDAO extends DAO {
         Cursor cursor = db.rawQuery(sql, null);
 
         while (cursor.moveToNext()) {
-            int id = cursor.getInt(cursor.getColumnIndexOrThrow(TablesData.Subject.PK));
-            String name = cursor.getString(cursor.getColumnIndexOrThrow(TablesData.Subject.SUBJECT_NAME));
-            String teacher = cursor.getString(cursor.getColumnIndexOrThrow(TablesData.Subject.TEACHER));
-            String schoolYear = cursor.getString(cursor.getColumnIndexOrThrow(TablesData.Subject.SCHOOL_YEAR));
-
             Subject subject = new Subject();
-            subject.setId(id);
-            subject.setName(name);
-            subject.setTeacher(teacher);
-            subject.setSchoolYear(schoolYear);
+            subject.setId(cursor.getInt(cursor.getColumnIndexOrThrow(TablesData.Subject.PK)));
+            subject.setName(cursor.getString(cursor.getColumnIndexOrThrow(TablesData.Subject.SUBJECT_NAME)));
+            subject.setTeacher(cursor.getString(cursor.getColumnIndexOrThrow(TablesData.Subject.TEACHER)));
+            subject.setSchoolYear(cursor.getString(cursor.getColumnIndexOrThrow(TablesData.Subject.SCHOOL_YEAR)));
+            subject.setColor(cursor.getString(cursor.getColumnIndexOrThrow(TablesData.Subject.COLOR)));
 
             subjects.add(subject);
         }

@@ -22,8 +22,8 @@ public class DBHandler extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         if (oldVersion < 3) {
-            db.execSQL("ALTER TABLE " + TablesData.Tasks.NAME +
-                    " ADD COLUMN " + TablesData.Tasks.CALENDAR_EVENT_ID + " VARCHAR(100)");
+            db.execSQL("ALTER TABLE " + TablesData.Subject.NAME +
+                    " ADD COLUMN " + TablesData.Subject.COLOR + " VARCHAR(30);");
         }
     }
 }

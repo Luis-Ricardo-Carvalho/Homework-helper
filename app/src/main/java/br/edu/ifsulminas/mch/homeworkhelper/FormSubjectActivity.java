@@ -1,10 +1,12 @@
 package br.edu.ifsulminas.mch.homeworkhelper;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -27,6 +29,12 @@ public class FormSubjectActivity extends AppCompatActivity {
     private EditText nameEditText;
     private EditText teacherEditText;
     private EditText schoolYearEditText;
+    private Spinner colorSpinner;
+
+    private final String[] colorNames = {"Vermelho", "Rosa", "Roxo", "Azul", "Verde-água", "Verde", "Laranja", "Amarelo"};
+    private final String[] colorKeys  = {"subject_red", "subject_pink", "subject_purple", "subject_blue", "subject_teal", "subject_green", "subject_orange", "subject_yellow"};
+
+    private String selectedColorKey = "subject_blue";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,17 +51,43 @@ public class FormSubjectActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Intent calingIntent = getIntent();
-        subject = (Subject) calingIntent.getSerializableExtra(SUBJECT_KEY);
-
-        nameEditText = findViewById(R.id.subject_name);
-        teacherEditText = findViewById(R.id.subject_teacher);
+        nameEditText       = findViewById(R.id.subject_name);
+        teacherEditText    = findViewById(R.id.subject_teacher);
         schoolYearEditText = findViewById(R.id.subject_schoolYear);
+        colorSpinner       = findViewById(R.id.subject_color_spinner);
 
+        // Configura o Spinner
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_spinner_item,
+                colorNames
+        );
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        colorSpinner.setAdapter(spinnerAdapter);
+
+        colorSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, android.view.View view, int position, long id) {
+                selectedColorKey = colorKeys[position];
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+
+        // Carrega subject se for edição
+        subject = (Subject) getIntent().getSerializableExtra(SUBJECT_KEY);
         if (subject != null) {
             nameEditText.setText(subject.getName());
             teacherEditText.setText(subject.getTeacher());
             schoolYearEditText.setText(subject.getSchoolYear());
+
+            // Seleciona a cor salva no spinner
+            for (int i = 0; i < colorKeys.length; i++) {
+                if (colorKeys[i].equals(subject.getColor())) {
+                    colorSpinner.setSelection(i);
+                    break;
+                }
+            }
         }
 
         nameEditText.requestFocus();
@@ -61,57 +95,40 @@ public class FormSubjectActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.menu_form_save,menu);
-
+        getMenuInflater().inflate(R.menu.menu_form_save, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        if(item.getItemId() == R.id.menu_edit_subject){
-            String name = nameEditText.getText().toString();
-            String teacher = teacherEditText.getText().toString();
+        if (item.getItemId() == R.id.menu_edit_subject) {
+            String name       = nameEditText.getText().toString();
+            String teacher    = teacherEditText.getText().toString();
             String schoolYear = schoolYearEditText.getText().toString();
 
-            if ("".equals(name) || name.isBlank()){
-                Toast.makeText(getBaseContext(),
-                        "O nome da Diciplina não pode ser vazia",
-                        Toast.LENGTH_SHORT).show();
-            } else if ("".equals(teacher) || teacher.isBlank()){
-                Toast.makeText(getBaseContext(),
-                        "O Profesor da Diciplina não pode ser vazio",
-                        Toast.LENGTH_SHORT).show();
-            } else if ("".equals(schoolYear) || schoolYear.isBlank()) {
-                Toast.makeText(getBaseContext(),
-                        "A Escolaridade da Diciplina não pode ser vazia",
-                        Toast.LENGTH_SHORT).show();
-            }else {
-                boolean isInsert = false;
-                if(subject == null) {
-                    subject = new Subject();
-                    isInsert = true;
-                }
+            if (name.isBlank()) {
+                Toast.makeText(this, "O nome da Disciplina não pode ser vazio", Toast.LENGTH_SHORT).show();
+            } else if (teacher.isBlank()) {
+                Toast.makeText(this, "O Professor da Disciplina não pode ser vazio", Toast.LENGTH_SHORT).show();
+            } else if (schoolYear.isBlank()) {
+                Toast.makeText(this, "A Escolaridade não pode ser vazia", Toast.LENGTH_SHORT).show();
+            } else {
+                boolean isInsert = (subject == null);
+                if (isInsert) subject = new Subject();
 
                 subject.setName(name);
                 subject.setTeacher(teacher);
                 subject.setSchoolYear(schoolYear);
+                subject.setColor(selectedColorKey);
 
                 SubjectDAO dao = new SubjectDAO(this);
-
-                if (isInsert)
-                    dao.save(subject);
+                if (isInsert) dao.save(subject);
                 else dao.update(subject);
 
-                Toast.makeText(getBaseContext(),
-                        "Diciplina salva com sucesso",
-                        Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(this, "Disciplina salva com sucesso", Toast.LENGTH_SHORT).show();
                 finish();
             }
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

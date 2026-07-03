@@ -18,6 +18,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_home);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.home), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -30,6 +31,12 @@ public class HomeActivity extends AppCompatActivity {
         Button btnMaterias = findViewById(R.id.btn_materias);
         btnMaterias.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, IndexActivity.class);
+            startActivity(intent);
+        });
+
+        Button btnClassrom = findViewById(R.id.btn_classrom);
+        btnClassrom.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, ClassromActivity.class);
             startActivity(intent);
         });
     }

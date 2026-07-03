@@ -1,134 +1,150 @@
 [
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/menu_menu_form.xml.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/menu/menu_form.xml"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\layout_activity_index.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\layout\\activity_index.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/drawable_ic_check.xml.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/drawable/ic_check.xml"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\menu_menu_form_save.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\menu\\menu_form_save.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:/layout_activity_classroom_list.xml.flat",
+        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-39:/layout/activity_classroom_list.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/xml_backup_rules.xml.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/drawable_ic_launcher_web.png.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/drawable/ic_launcher_web.png"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/mipmap-xxhdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\layout\\activity_main.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/layout_item_subject.xml.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/layout/item_subject.xml"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\menu_menu_form.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\menu\\menu_form.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/layout_item_task.xml.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/layout/item_task.xml"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\mipmap-xhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/mipmap-mdpi/ic_launcher.png"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\layout_activity_form.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\layout\\activity_form.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/layout_activity_form_subject.xml.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/layout/activity_form_subject.xml"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/xml_data_extraction_rules.xml.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\mipmap-mdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/mipmap-hdpi_ic_launcher_foreground.png.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/mipmap-hdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\layout_activity_classroom_list.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\layout\\activity_classroom_list.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/menu_menu_form_save.xml.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/menu/menu_form_save.xml"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/layout_activity_home.xml.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/layout/activity_home.xml"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\layout_item_task.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\layout\\item_task.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\drawable_ic_save.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\drawable\\ic_save.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/mipmap-xhdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\layout_activity_home.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\layout\\activity_home.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\layout_activity_form_subject.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\layout\\activity_form_subject.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/mipmap-mdpi_ic_launcher_foreground.png.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/mipmap-mdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/mipmap-hdpi/ic_launcher.png"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\drawable_ic_check.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\drawable\\ic_check.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\mipmap-xxhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/drawable_ic_save.xml.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/drawable/ic_save.xml"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\layout_item_subject.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\layout\\item_subject.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/layout_activity_index.xml.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/layout/activity_index.xml"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/drawable_ic_launcher_background.xml.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/drawable/ic_launcher_background.xml"
+        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:/layout_activity_class_atividades.xml.flat",
+        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-39:/layout/activity_class_atividades.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/layout_activity_main.xml.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/layout/activity_main.xml"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\layout_activity_class_atividades.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\layout\\activity_class_atividades.xml"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\mipmap-hdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "br.edu.ifsulminas.mch.homeworkhelper.app-debug-35:/layout_activity_form.xml.flat",
-        "source": "br.edu.ifsulminas.mch.homeworkhelper.app-main-37:/layout/activity_form.xml"
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\drawable_ic_launcher_web.png.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\drawable\\ic_launcher_web.png"
+    },
+    {
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-debug-37:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\41279517883\\.gradle\\daemon\\9.4.1\\br.edu.ifsulminas.mch.homeworkhelper.app-main-39:\\xml\\data_extraction_rules.xml"
     }
 ]
