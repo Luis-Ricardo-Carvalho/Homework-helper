@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/subject_card"
     android:layout_width="match_parent"
     android:layout_height="140dp"
     android:layout_margin="8dp"
@@ -11,7 +12,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#0F9D58" android:padding="16dp">
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/txtSubjectName"

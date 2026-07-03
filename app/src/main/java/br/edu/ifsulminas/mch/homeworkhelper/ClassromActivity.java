@@ -83,7 +83,6 @@ public class ClassromActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
         Button btnLogin = findViewById(R.id.btn_login);
-        FloatingActionButton fab = findViewById(R.id.fab);
 
         rvCursos = findViewById(R.id.subject_list);
         rvCursos.setLayoutManager(new LinearLayoutManager(this));
@@ -91,10 +90,6 @@ public class ClassromActivity extends AppCompatActivity {
         listaTurmas = new ArrayList<>();
         adapter = new ClassroomAdapter(listaTurmas);
         rvCursos.setAdapter(adapter);
-
-        fab.setOnClickListener(v -> {
-            Toast.makeText(this, "Ação do FAB!", Toast.LENGTH_SHORT).show();
-        });
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()

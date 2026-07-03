@@ -8,13 +8,15 @@ class TablesData {
         static final String SUBJECT_NAME = "name";
         static final String TEACHER = "teacher";
         static final String SCHOOL_YEAR = "school_year";
+        static final String COLOR = "color";
 
         static final String CREATE_SQL =
                 "CREATE TABLE IF NOT EXISTS " + NAME + " ( " +
                         PK + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         SUBJECT_NAME + " VARCHAR(100), " +
                         TEACHER + " VARCHAR(100), " +
-                        SCHOOL_YEAR + " DATE );";
+                        SCHOOL_YEAR + " DATE, " +
+                        COLOR + " VARCHAR(30) );";
     }
 
     static class Tasks {

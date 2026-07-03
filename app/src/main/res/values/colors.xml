@@ -4,4 +4,14 @@
     <color name="colorPrimaryDark">#1B5E20</color>
     <color name="colorAccent">#D50000</color>
     <color name="white">#FFFFFF</color>
+
+    <!-- Cores das disciplinas -->
+    <color name="subject_red">#EF5350</color>
+    <color name="subject_pink">#EC407A</color>
+    <color name="subject_purple">#AB47BC</color>
+    <color name="subject_blue">#42A5F5</color>
+    <color name="subject_teal">#26A69A</color>
+    <color name="subject_green">#66BB6A</color>
+    <color name="subject_orange">#FFA726</color>
+    <color name="subject_yellow">#FFEE58</color>
 </resources>

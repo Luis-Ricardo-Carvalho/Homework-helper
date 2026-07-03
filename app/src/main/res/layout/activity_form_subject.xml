@@ -67,4 +67,23 @@
             android:minHeight="@dimen/edit_texts_height" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Seletor de cor -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:text="Cor da Disciplina"
+        android:textSize="14sp"
+        android:textColor="?android:attr/textColorSecondary" />
+
+    <Spinner
+        android:id="@+id/subject_color_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="@dimen/activity_horizontal_margin" />
+
 </LinearLayout>

@@ -10,6 +10,8 @@ public class Subject implements Serializable {
     private String teacher;
     private String schoolYear;
 
+    private String color;
+
     public int getId() {
         return id;
     }
@@ -36,6 +38,14 @@ public class Subject implements Serializable {
     }
     public void setSchoolYear(String schoolYear) {
         this.schoolYear = schoolYear;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     @NonNull

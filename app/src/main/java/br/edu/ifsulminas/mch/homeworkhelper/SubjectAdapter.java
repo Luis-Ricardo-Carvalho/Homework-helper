@@ -1,10 +1,12 @@
 package br.edu.ifsulminas.mch.homeworkhelper;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import br.edu.ifsulminas.mch.homeworkhelper.model.Subject;
@@ -39,8 +41,7 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
 
     @Override
     public void onBindViewHolder(@NonNull SubjectViewHolder holder, int position) {
-        Subject subject = subjects.get(position);
-        holder.bind(subject, listener, longClickListener);
+        holder.bind(subjects.get(position), listener, longClickListener);
     }
 
     @Override
@@ -49,12 +50,14 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
     }
 
     static class SubjectViewHolder extends RecyclerView.ViewHolder {
+        CardView cardView;
         TextView txtName;
         TextView txtDetails;
 
         public SubjectViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtName = itemView.findViewById(R.id.txtSubjectName);
+            cardView   = itemView.findViewById(R.id.subject_card);
+            txtName    = itemView.findViewById(R.id.txtSubjectName);
             txtDetails = itemView.findViewById(R.id.txtSubjectDetails);
         }
 
@@ -62,8 +65,17 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
             txtName.setText(subject.getName());
             txtDetails.setText(subject.getTeacher() + " • " + subject.getSchoolYear());
 
-            itemView.setOnClickListener(v -> listener.onItemClick(subject));
+            // Aplica a cor do card
+            Context ctx = itemView.getContext();
+            String colorKey = subject.getColor();
+            if (colorKey != null && !colorKey.isEmpty()) {
+                int colorResId = ctx.getResources().getIdentifier(colorKey, "color", ctx.getPackageName());
+                if (colorResId != 0) {
+                    cardView.setCardBackgroundColor(ctx.getColor(colorResId));
+                }
+            }
 
+            itemView.setOnClickListener(v -> listener.onItemClick(subject));
             itemView.setOnLongClickListener(v -> {
                 longClickListener.onItemLongClick(subject);
                 return true;
