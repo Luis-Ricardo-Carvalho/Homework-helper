@@ -34,6 +34,7 @@ int id fab 0x0
 int id form 0x0
 int id form_subject 0x0
 int id home 0x0
+int id imageViewShareItem 0x0
 int id index 0x0
 int id main 0x0
 int id main_assignments 0x0
