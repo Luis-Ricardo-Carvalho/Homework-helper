@@ -25,7 +25,9 @@ import java.util.List;
 
 import br.edu.ifsulminas.mch.homeworkhelper.model.Subject;
 import br.edu.ifsulminas.mch.homeworkhelper.model.Task;
-import br.edu.ifsulminas.mch.homeworkhelper.model.persistence.TaskDAO;
+import br.edu.ifsulminas.mch.homeworkhelper.model.persistence.AppDatabase;
+import br.edu.ifsulminas.mch.homeworkhelper.model.persistence.SubjectDao;
+import br.edu.ifsulminas.mch.homeworkhelper.model.persistence.TaskDao;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -68,15 +70,12 @@ public class MainActivity extends AppCompatActivity {
         todoList = findViewById(R.id.todo_list);
         registerForContextMenu(todoList);
 
-        todoList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Task task = (Task) todoList.getItemAtPosition(position);
-                Intent formActIntent = new Intent(MainActivity.this, FormActivity.class);
-                formActIntent.putExtra(FormActivity.TASK_KEY, task);
-                formActIntent.putExtra("SUBJECT_FOR_TASK", currentSubject);
-                startActivity(formActIntent);
-            }
+        todoList.setOnItemClickListener((parent, view, position, id) -> {
+            Task task = (Task) todoList.getItemAtPosition(position);
+            Intent formActIntent = new Intent(MainActivity.this, FormActivity.class);
+            formActIntent.putExtra(FormActivity.TASK_KEY, task);
+            formActIntent.putExtra("SUBJECT_FOR_TASK", currentSubject);
+            startActivity(formActIntent);
         });
     }
 
@@ -112,10 +111,9 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         if (currentSubject != null) {
-            br.edu.ifsulminas.mch.homeworkhelper.model.persistence.SubjectDAO subjectDAO =
-                    new br.edu.ifsulminas.mch.homeworkhelper.model.persistence.SubjectDAO(this);
-
-            for (br.edu.ifsulminas.mch.homeworkhelper.model.Subject s : subjectDAO.listAll()) {
+            SubjectDao subjectDao = AppDatabase.getInstance(this).subjectDao();
+            List<Subject> subjects = subjectDao.listAll();
+            for (Subject s : subjects) {
                 if (s.getId() == currentSubject.getId()) {
                     currentSubject = s;
                     break;
@@ -130,12 +128,12 @@ public class MainActivity extends AppCompatActivity {
         updateTasksList();
     }
 
-    private void updateTasksList(){
-        TaskDAO dao = new TaskDAO(this);
+    private void updateTasksList() {
+        TaskDao dao = AppDatabase.getInstance(this).taskDao();
         List<Task> tasks;
 
         if (currentSubject != null) {
-            tasks = dao.listAllBySubject(currentSubject.getId());
+            tasks = dao.listBySubject(currentSubject.getId());
         } else {
             tasks = dao.listAll();
         }
@@ -147,17 +145,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         MenuItem itemDelete = menu.add("Concluir Tarefa");
-        itemDelete.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(@NonNull MenuItem item) {
-                AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
-                Task task = (Task) todoList.getItemAtPosition(info.position);
+        itemDelete.setOnMenuItemClickListener(item -> {
+            AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
+            Task task = (Task) todoList.getItemAtPosition(info.position);
 
-                TaskDAO dao = new TaskDAO(MainActivity.this);
-                dao.delete(task);
-                updateTasksList();
-                return true;
-            }
+            AppDatabase.getInstance(MainActivity.this).taskDao().delete(task);
+            updateTasksList();
+            return true;
         });
     }
 }

@@ -23,7 +23,8 @@ import java.util.Date;
 import java.util.Locale;
 import br.edu.ifsulminas.mch.homeworkhelper.model.Subject;
 import br.edu.ifsulminas.mch.homeworkhelper.model.Task;
-import br.edu.ifsulminas.mch.homeworkhelper.model.persistence.TaskDAO;
+import br.edu.ifsulminas.mch.homeworkhelper.model.persistence.AppDatabase;
+import br.edu.ifsulminas.mch.homeworkhelper.model.persistence.TaskDao;
 import android.provider.CalendarContract;
 
 public class FormActivity extends AppCompatActivity {
@@ -99,11 +100,8 @@ public class FormActivity extends AppCompatActivity {
             if (name.isBlank() || desc.isBlank() || selectedDateISO == null || selectedDateISO.isBlank()) {
                 Toast.makeText(getBaseContext(), "Por favor, preencha todos os campos da tarefa.", Toast.LENGTH_SHORT).show();
             } else {
-                boolean isInsert = false;
-                if (task == null) {
-                    task = new Task();
-                    isInsert = true;
-                }
+                boolean isInsert = (task == null);
+                if (isInsert) task = new Task();
 
                 task.setName(name);
                 task.setDescription(desc);
@@ -114,12 +112,9 @@ public class FormActivity extends AppCompatActivity {
                     task.setSubjectId(currentSubject.getId());
                 }
 
-                TaskDAO dao = new TaskDAO(this);
-                if (isInsert) {
-                    dao.save(task);
-                } else {
-                    dao.update(task);
-                }
+                TaskDao dao = AppDatabase.getInstance(this).taskDao();
+                if (isInsert) dao.save(task);
+                else dao.update(task);
 
                 Toast.makeText(getBaseContext(), "Tarefa salva com sucesso", Toast.LENGTH_SHORT).show();
                 abrirCalendario(task);
@@ -195,5 +190,4 @@ public class FormActivity extends AppCompatActivity {
             Toast.makeText(this, "Erro ao abrir calendário", Toast.LENGTH_SHORT).show();
         }
     }
-
 }

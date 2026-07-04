@@ -5,7 +5,6 @@ plugins {
 android {
     namespace 'br.edu.ifsulminas.mch.homeworkhelper'
 
-    // CORRIGIDO: Sintaxe limpa e padrão para o SDK 36
     compileSdk 36
 
     defaultConfig {
@@ -30,7 +29,6 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
 
-    // CORRIGIDO: Bloco adicionado para ignorar os arquivos duplicados META-INF
     packaging {
         resources {
             excludes += '/META-INF/DEPENDENCIES'
@@ -50,14 +48,16 @@ dependencies {
     androidTestImplementation libs.espresso.core
     androidTestImplementation libs.ext.junit
 
-    //noinspection LoginCredentials
     implementation libs.play.services.auth
     implementation libs.google.api.client.android
     implementation 'com.google.apis:google-api-services-classroom:v1-rev20220323-2.0.0'
 
     implementation platform(libs.firebase.bom)
-
-    // Adicione os serviços do Firebase que você vai usar (sem especificar versão)
     implementation libs.firebase.analytics
     implementation libs.firebase.auth
+
+    // Room
+    def room_version = "2.6.1"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
 }

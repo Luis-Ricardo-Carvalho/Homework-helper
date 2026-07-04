@@ -1,15 +1,43 @@
 package br.edu.ifsulminas.mch.homeworkhelper.model;
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
+
 import java.io.Serializable;
 
+@Entity(
+        tableName = "tasks",
+        foreignKeys = @ForeignKey(
+                entity = Subject.class,
+                parentColumns = "id",
+                childColumns = "subject_id",
+                onDelete = ForeignKey.CASCADE
+        )
+)
 public class Task implements Serializable {
+
+    @PrimaryKey(autoGenerate = true)
     private int id;
+
+    @ColumnInfo(name = "name")
     private String name;
+
+    @ColumnInfo(name = "description")
     private String description;
+
+    @ColumnInfo(name = "date_submission")
     private String dateSubmission;
+
+    @ColumnInfo(name = "active")
     private boolean active;
+
+    @ColumnInfo(name = "subject_id", index = true)
     private int subjectId;
+
+    @ColumnInfo(name = "calendar_event_id")
     private String calendarEventId;
 
     public int getId() { return id; }
@@ -35,7 +63,5 @@ public class Task implements Serializable {
 
     @NonNull
     @Override
-    public String toString() {
-        return getName();
-    }
+    public String toString() { return getName(); }
 }
