@@ -14,4 +14,7 @@
     <color name="subject_green">#66BB6A</color>
     <color name="subject_orange">#FFA726</color>
     <color name="subject_yellow">#FFEE58</color>
+
+    <color name="primary">#6200EE</color>
+    <color name="black">#000000</color>
 </resources>

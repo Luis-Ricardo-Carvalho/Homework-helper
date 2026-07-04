@@ -19,7 +19,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import br.edu.ifsulminas.mch.homeworkhelper.model.Subject;
-import br.edu.ifsulminas.mch.homeworkhelper.model.persistence.SubjectDAO;
+import br.edu.ifsulminas.mch.homeworkhelper.model.persistence.AppDatabase;
+import br.edu.ifsulminas.mch.homeworkhelper.model.persistence.SubjectDao;
 
 public class FormSubjectActivity extends AppCompatActivity {
 
@@ -56,7 +57,6 @@ public class FormSubjectActivity extends AppCompatActivity {
         schoolYearEditText = findViewById(R.id.subject_schoolYear);
         colorSpinner       = findViewById(R.id.subject_color_spinner);
 
-        // Configura o Spinner
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_item,
@@ -74,14 +74,12 @@ public class FormSubjectActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {}
         });
 
-        // Carrega subject se for edição
         subject = (Subject) getIntent().getSerializableExtra(SUBJECT_KEY);
         if (subject != null) {
             nameEditText.setText(subject.getName());
             teacherEditText.setText(subject.getTeacher());
             schoolYearEditText.setText(subject.getSchoolYear());
 
-            // Seleciona a cor salva no spinner
             for (int i = 0; i < colorKeys.length; i++) {
                 if (colorKeys[i].equals(subject.getColor())) {
                     colorSpinner.setSelection(i);
@@ -121,7 +119,7 @@ public class FormSubjectActivity extends AppCompatActivity {
                 subject.setSchoolYear(schoolYear);
                 subject.setColor(selectedColorKey);
 
-                SubjectDAO dao = new SubjectDAO(this);
+                SubjectDao dao = AppDatabase.getInstance(this).subjectDao();
                 if (isInsert) dao.save(subject);
                 else dao.update(subject);
 

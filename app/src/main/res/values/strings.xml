@@ -15,4 +15,11 @@
     <string name="task_done">Tarefa concluída</string>
     <string name="task_updated">Tarefa atualizada</string>
     <string name="delete_task">Concluir Tafera</string>
+    <string name="email_label">E-mail</string>
+    <string name="email_placeholder">Digite seu e-mail</string>
+    <string name="password_label">Senha</string>
+    <string name="password_placeholder">Digite sua senha</string>
+    <string name="button_login">Entrar</string>
+    <string name="button_register">Cadastrar-se</string>
+    <string name="button_forgot_pw">Esqueci a senha</string>
 </resources>

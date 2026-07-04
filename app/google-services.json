@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "41395378460",
+    "project_id": "homeworkhelper-984a5",
+    "storage_bucket": "homeworkhelper-984a5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:41395378460:android:9ad50fefa01066247702d9",
+        "android_client_info": {
+          "package_name": "br.edu.ifsulminas.mch.homeworkhelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "41395378460-p6suqqoa8j3qmo1q37njcd7pl6dpq0u4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0xfTdhNTIBcb74L2zcXodvGVc2WH7cUk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "41395378460-p6suqqoa8j3qmo1q37njcd7pl6dpq0u4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,9 +1,11 @@
 R_DEF: Internal format may change without notice
 local
+color black
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
 color ic_launcher_background
+color primary
 color subject_blue
 color subject_green
 color subject_orange
@@ -31,13 +33,17 @@ id btn_classrom
 id btn_date
 id btn_login
 id btn_materias
+id buttonLogin
 id calendar_container
+id editTextEmail
+id editTextPassword
 id fab
 id form
 id form_subject
 id home
 id imageViewShareItem
 id index
+id loginLayout
 id main
 id main_assignments
 id menu_edit_subject
@@ -49,6 +55,10 @@ id subject_schoolYear
 id subject_teacher
 id task_description
 id task_name
+id textInputLayoutEmail
+id textInputLayoutPassword
+id textViewEmail
+id textViewPassword
 id todo_list
 id toolbar
 id toolbar_assignments
@@ -66,6 +76,7 @@ layout activity_index
 layout activity_main
 layout item_subject
 layout item_task
+layout login
 menu menu_form
 menu menu_form_save
 mipmap ic_launcher
@@ -73,8 +84,15 @@ mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string action_settings
 string app_name
+string button_forgot_pw
+string button_login
+string button_register
 string delete_task
+string email_label
+string email_placeholder
 string fab_description
+string password_label
+string password_placeholder
 string save_task
 string subject_name
 string subject_schoolYear

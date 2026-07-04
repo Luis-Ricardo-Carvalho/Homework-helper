@@ -14,7 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.List;
 import br.edu.ifsulminas.mch.homeworkhelper.model.Subject;
-import br.edu.ifsulminas.mch.homeworkhelper.model.persistence.SubjectDAO;
+import br.edu.ifsulminas.mch.homeworkhelper.model.persistence.AppDatabase;
+import br.edu.ifsulminas.mch.homeworkhelper.model.persistence.SubjectDao;
 
 public class IndexActivity extends AppCompatActivity {
 
@@ -55,25 +56,22 @@ public class IndexActivity extends AppCompatActivity {
     }
 
     private void updateSubjectList() {
-        SubjectDAO dao = new SubjectDAO(this);
+        SubjectDao dao = AppDatabase.getInstance(this).subjectDao();
         List<Subject> subjects = dao.listAll();
 
         SubjectAdapter adapter = new SubjectAdapter(
                 subjects,
                 subject -> {
-                    // clique simples — abre MainActivity
                     Intent mainActIntent = new Intent(IndexActivity.this, MainActivity.class);
                     mainActIntent.putExtra("SUBJECT_SELECTED", subject);
                     startActivity(mainActIntent);
                 },
                 subject -> {
-                    // long press — confirma e apaga
                     new AlertDialog.Builder(IndexActivity.this)
                             .setTitle("Excluir Disciplina")
                             .setMessage("Deseja excluir a disciplina \"" + subject.getName() + "\"?")
                             .setPositiveButton("Excluir", (dialog, which) -> {
-                                SubjectDAO deleteDao = new SubjectDAO(IndexActivity.this);
-                                deleteDao.delete(subject);
+                                AppDatabase.getInstance(IndexActivity.this).subjectDao().delete(subject);
                                 updateSubjectList();
                             })
                             .setNegativeButton("Cancelar", null)
