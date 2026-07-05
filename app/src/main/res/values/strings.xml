@@ -1,25 +1,47 @@
 <resources>
     <string name="app_name">Homework Helper</string>
     <string name="action_settings">Settings</string>
+
+    <!-- Formulário de Tarefa -->
     <string name="title_activity_form">Cadastrar Atividade</string>
-    <string name="title_activity_form_subject">Cadastrar Máteria</string>
     <string name="task_description">Descrição da Atividade</string>
-    <string name="subject_name">Nome da Diciplina</string>
-    <string name="subject_teacher">Nome do Professor</string>
-    <string name="subject_schoolYear">Ano da Diciplina</string>
+    <string name="task_name">Nome da Atividade</string>
+    <string name="task_date">Limite</string>
     <string name="save_task">Salvar</string>
     <string name="task_saved">Tarefa salva</string>
-    <string name="task_description_empty">Descrição da tarefa não pode ser vazia</string>
-    <string name="task_date">Limite</string>
-    <string name="fab_description">Adiconar Tarefa</string>
-    <string name="task_done">Tarefa concluída</string>
     <string name="task_updated">Tarefa atualizada</string>
-    <string name="delete_task">Concluir Tafera</string>
+    <string name="task_done">Tarefa concluída</string>
+    <string name="task_description_empty">Descrição da tarefa não pode ser vazia</string>
+    <string name="delete_task">Concluir Tarefa</string>
+    <string name="fab_description">Adicionar Tarefa</string>
+
+    <!-- Formulário de Disciplina -->
+    <string name="title_activity_form_subject">Cadastrar Matéria</string>
+    <string name="subject_name">Nome da Disciplina</string>
+    <string name="subject_teacher">Nome do Professor</string>
+    <string name="subject_schoolYear">Ano da Disciplina</string>
+    <string name="subject_color">Cor da Disciplina</string>
+
+    <!-- Login -->
     <string name="email_label">E-mail</string>
     <string name="email_placeholder">Digite seu e-mail</string>
     <string name="password_label">Senha</string>
     <string name="password_placeholder">Digite sua senha</string>
     <string name="button_login">Entrar</string>
-    <string name="button_register">Cadastrar-se</string>
-    <string name="button_forgot_pw">Esqueci a senha</string>
+    <string name="button_register">Criar Conta</string>
+    <string name="button_forgot_pw">Esqueci minha senha</string>
+
+    <!-- Cadastro -->
+    <string name="title_activity_register">Criar Conta</string>
+    <string name="register_name">Nome completo</string>
+    <string name="register_email">E-mail</string>
+    <string name="register_phone">Telefone</string>
+    <string name="register_course">Curso</string>
+    <string name="register_password">Senha</string>
+    <string name="register_password_confirm">Confirmar senha</string>
+    <string name="register_button">Criar Conta</string>
+    <string name="register_success">Conta criada com sucesso!</string>
+    <string name="register_error_empty">Preencha todos os campos</string>
+    <string name="register_error_password_match">As senhas não coincidem</string>
+    <string name="register_error_password_length">A senha deve ter no mínimo 6 caracteres</string>
 </resources>
