@@ -64,10 +64,10 @@ public class BootReceiver extends BroadcastReceiver {
                     scheduleAlarm(context, task.getId() * 2, task.getName(), subjectName, vesp.getTimeInMillis());
                 }
 
-                // Alarme dia da entrega às 08:00
+                // Alarme dia da entrega às 06:00
                 Calendar diaEntrega = Calendar.getInstance();
                 diaEntrega.setTime(deliveryDate);
-                diaEntrega.set(Calendar.HOUR_OF_DAY, 8);
+                diaEntrega.set(Calendar.HOUR_OF_DAY, 6);
                 diaEntrega.set(Calendar.MINUTE, 0);
                 diaEntrega.set(Calendar.SECOND, 0);
                 diaEntrega.set(Calendar.MILLISECOND, 0);
