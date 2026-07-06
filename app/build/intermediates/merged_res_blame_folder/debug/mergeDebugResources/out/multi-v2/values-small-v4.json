@@ -4,7 +4,7 @@
             "outputFile": "br.edu.ifsulminas.mch.homeworkhelper.app-mergeDebugResources-45:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Lucas\\.gradle\\caches\\9.4.1\\transforms\\1d3e81c7483896756ecb8cdf3aaee0f0\\transformed\\material-1.10.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "C:\\Users\\gabri\\.gradle\\caches\\9.4.1\\transforms\\cdbdd5923cc7583debd3b282b17584af\\transformed\\material-1.10.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

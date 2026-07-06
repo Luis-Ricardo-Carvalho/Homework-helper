@@ -4,7 +4,7 @@
             "outputFile": "br.edu.ifsulminas.mch.homeworkhelper.app-mergeDebugResources-45:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Lucas\\.gradle\\caches\\9.4.1\\transforms\\dc3036a777a2ee6c7fd41024a4f8a251\\transformed\\appcompat-1.6.1\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\gabri\\.gradle\\caches\\9.4.1\\transforms\\8f0d26fdc91bf5591b2c2e0a39939183\\transformed\\appcompat-1.6.1\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Lucas\\.gradle\\caches\\9.4.1\\transforms\\1d3e81c7483896756ecb8cdf3aaee0f0\\transformed\\material-1.10.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\gabri\\.gradle\\caches\\9.4.1\\transforms\\cdbdd5923cc7583debd3b282b17584af\\transformed\\material-1.10.0\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

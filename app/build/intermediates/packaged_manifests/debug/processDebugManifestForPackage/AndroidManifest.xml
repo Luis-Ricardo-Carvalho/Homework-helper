@@ -9,6 +9,9 @@
         android:targetSdkVersion="36" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -99,6 +102,18 @@
                 android:value=".MainActivity" >
             </meta-data>
         </activity>
+
+        <receiver
+            android:name="br.edu.ifsulminas.mch.homeworkhelper.NotificationReceiver"
+            android:exported="false" />
+        <receiver
+            android:name="br.edu.ifsulminas.mch.homeworkhelper.BootReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"
             android:excludeFromRecents="true"

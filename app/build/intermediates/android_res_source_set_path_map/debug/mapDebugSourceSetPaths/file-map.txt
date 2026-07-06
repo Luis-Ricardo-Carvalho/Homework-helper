@@ -1,8 +1,7 @@
-br.edu.ifsulminas.mch.homeworkhelper.app-pngs-0 C:\Users\Lucas\StudioProjects\Homework-helper\app\build\generated\res\pngs\debug
-br.edu.ifsulminas.mch.homeworkhelper.app-updated_navigation_xml-1 C:\Users\Lucas\StudioProjects\Homework-helper\app\build\generated\updated_navigation_xml\debug
-br.edu.ifsulminas.mch.homeworkhelper.app-packageDebugResources-2 C:\Users\Lucas\StudioProjects\Homework-helper\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-br.edu.ifsulminas.mch.homeworkhelper.app-packageDebugResources-3 C:\Users\Lucas\StudioProjects\Homework-helper\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-br.edu.ifsulminas.mch.homeworkhelper.app-debug-4 C:\Users\Lucas\StudioProjects\Homework-helper\app\build\intermediates\merged_res\debug\mergeDebugResources
-br.edu.ifsulminas.mch.homeworkhelper.app-debug-5 C:\Users\Lucas\StudioProjects\Homework-helper\app\src\debug\res
-br.edu.ifsulminas.mch.homeworkhelper.app-main-6 C:\Users\Lucas\StudioProjects\Homework-helper\app\src\main\res
-gradleHome-0 C:\Users\Lucas\.gradle
+br.edu.ifsulminas.mch.homeworkhelper.app-pngs-0 C:\Users\gabri\Desktop\PDM\AndroidStudioProjects\Homework-helper\app\build\generated\res\pngs\debug
+br.edu.ifsulminas.mch.homeworkhelper.app-updated_navigation_xml-1 C:\Users\gabri\Desktop\PDM\AndroidStudioProjects\Homework-helper\app\build\generated\updated_navigation_xml\debug
+br.edu.ifsulminas.mch.homeworkhelper.app-packageDebugResources-2 C:\Users\gabri\Desktop\PDM\AndroidStudioProjects\Homework-helper\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+br.edu.ifsulminas.mch.homeworkhelper.app-packageDebugResources-3 C:\Users\gabri\Desktop\PDM\AndroidStudioProjects\Homework-helper\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+br.edu.ifsulminas.mch.homeworkhelper.app-debug-4 C:\Users\gabri\Desktop\PDM\AndroidStudioProjects\Homework-helper\app\build\intermediates\merged_res\debug\mergeDebugResources
+br.edu.ifsulminas.mch.homeworkhelper.app-debug-5 C:\Users\gabri\Desktop\PDM\AndroidStudioProjects\Homework-helper\app\src\debug\res
+br.edu.ifsulminas.mch.homeworkhelper.app-main-6 C:\Users\gabri\Desktop\PDM\AndroidStudioProjects\Homework-helper\app\src\main\res

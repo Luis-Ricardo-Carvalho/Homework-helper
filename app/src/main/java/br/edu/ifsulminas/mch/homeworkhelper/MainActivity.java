@@ -1,5 +1,7 @@
 package br.edu.ifsulminas.mch.homeworkhelper;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -141,12 +143,30 @@ public class MainActivity extends AppCompatActivity {
         todoList.setAdapter(adapter);
     }
 
+    private void cancelarNotificacoes(int taskId) {
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        if (alarmManager == null) return;
+
+        Intent intent = new Intent(this, NotificationReceiver.class);
+        PendingIntent pendingIntentVesp = PendingIntent.getBroadcast(
+                this, taskId * 2, intent,
+                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+        PendingIntent pendingIntentDia = PendingIntent.getBroadcast(
+                this, taskId * 2 + 1, intent,
+                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+
+        alarmManager.cancel(pendingIntentVesp);
+        alarmManager.cancel(pendingIntentDia);
+    }
+
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         MenuItem itemDelete = menu.add("Concluir Tarefa");
         itemDelete.setOnMenuItemClickListener(item -> {
             AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
             Task task = (Task) todoList.getItemAtPosition(info.position);
+
+            cancelarNotificacoes(task.getId());
 
             AppDatabase.getInstance(MainActivity.this).taskDao().delete(task);
             updateTasksList();
