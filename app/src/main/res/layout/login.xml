@@ -94,6 +94,8 @@
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
         android:text="Criar Conta"
         android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buttonLogin" />
@@ -106,6 +108,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Esqueci minha senha"
+        android:textColor="@color/black"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buttonRegister" />

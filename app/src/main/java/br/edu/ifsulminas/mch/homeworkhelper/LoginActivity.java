@@ -47,9 +47,6 @@ public class LoginActivity extends AppCompatActivity {
         buttonRegister   = findViewById(R.id.buttonRegister);
         buttonForgotPassword = findViewById(R.id.buttonForgotPassword);
 
-        if (editTextEmail != null)    editTextEmail.setText("teste@teste.com");
-        if (editTextPassword != null) editTextPassword.setText("123456");
-
         if (buttonLogin != null)
             buttonLogin.setOnClickListener(v -> loginUser());
 
