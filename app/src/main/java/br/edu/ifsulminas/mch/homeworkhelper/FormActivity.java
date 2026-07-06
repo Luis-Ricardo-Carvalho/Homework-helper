@@ -1,8 +1,15 @@
 package br.edu.ifsulminas.mch.homeworkhelper;
 
+import android.Manifest;
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -117,6 +124,7 @@ public class FormActivity extends AppCompatActivity {
                 else dao.update(task);
 
                 Toast.makeText(getBaseContext(), "Tarefa salva com sucesso", Toast.LENGTH_SHORT).show();
+                agendarNotificacoes(task);
                 abrirCalendario(task);
             }
             return true;
@@ -160,6 +168,100 @@ public class FormActivity extends AppCompatActivity {
             return displayFormat.format(date);
         } catch (ParseException e) {
             return isoDate;
+        }
+    }
+
+    private static final int RC_NOTIFICATIONS = 2001;
+
+    private void agendarNotificacoes(Task task) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+                    != PackageManager.PERMISSION_GRANTED) {
+                pendingTaskForNotification = task;
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.POST_NOTIFICATIONS},
+                        RC_NOTIFICATIONS);
+                return;
+            }
+        }
+        agendarNotificacoesAlarmes(task);
+    }
+
+    private Task pendingTaskForNotification = null;
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == RC_NOTIFICATIONS && pendingTaskForNotification != null) {
+            agendarNotificacoesAlarmes(pendingTaskForNotification);
+            pendingTaskForNotification = null;
+        }
+    }
+
+    private void agendarNotificacoesAlarmes(Task task) {
+        NotificationHelper.createNotificationChannel(this);
+
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+            Date deliveryDate = format.parse(task.getDateSubmission());
+            if (deliveryDate == null) return;
+
+            String subjectName = (currentSubject != null) ? currentSubject.getName() : "";
+
+            // Véspera: 1 dia antes às 18:00
+            Calendar vesp = Calendar.getInstance();
+            vesp.setTime(deliveryDate);
+            vesp.add(Calendar.DAY_OF_YEAR, -1);
+            vesp.set(Calendar.HOUR_OF_DAY, 18);
+            vesp.set(Calendar.MINUTE, 0);
+            vesp.set(Calendar.SECOND, 0);
+            vesp.set(Calendar.MILLISECOND, 0);
+
+            if (vesp.getTimeInMillis() > System.currentTimeMillis()) {
+                scheduleAlarm(task.getId() * 2, task.getName(), subjectName, vesp.getTimeInMillis());
+            }
+
+            // Dia da entrega às 06:00
+            Calendar diaEntrega = Calendar.getInstance();
+            diaEntrega.setTime(deliveryDate);
+            diaEntrega.set(Calendar.HOUR_OF_DAY, 6);
+            diaEntrega.set(Calendar.MINUTE, 0);
+            diaEntrega.set(Calendar.SECOND, 0);
+            diaEntrega.set(Calendar.MILLISECOND, 0);
+
+            if (diaEntrega.getTimeInMillis() > System.currentTimeMillis()) {
+                scheduleAlarm(task.getId() * 2 + 1, task.getName(), subjectName, diaEntrega.getTimeInMillis());
+            }
+
+        } catch (ParseException e) {
+            Toast.makeText(this, "Erro ao agendar lembretes", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void scheduleAlarm(int requestCode, String taskName, String subjectName, long triggerTime) {
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        if (alarmManager == null) return;
+
+        Intent intent = new Intent(this, NotificationReceiver.class);
+        intent.putExtra(NotificationReceiver.EXTRA_TASK_ID, requestCode);
+        intent.putExtra(NotificationReceiver.EXTRA_TASK_NAME, taskName);
+        intent.putExtra(NotificationReceiver.EXTRA_SUBJECT_NAME, subjectName);
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(
+                this,
+                requestCode,
+                intent,
+                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
+        );
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            if (alarmManager.canScheduleExactAlarms()) {
+                alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, triggerTime, pendingIntent);
+            } else {
+                alarmManager.set(AlarmManager.RTC_WAKEUP, triggerTime, pendingIntent);
+            }
+        } else {
+            alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, triggerTime, pendingIntent);
         }
     }
 
