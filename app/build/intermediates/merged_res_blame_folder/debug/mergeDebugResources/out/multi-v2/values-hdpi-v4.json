@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "br.edu.ifsulminas.mch.homeworkhelper.app-mergeDebugResources-45:/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\gabri\\.gradle\\caches\\9.4.1\\transforms\\8f0d26fdc91bf5591b2c2e0a39939183\\transformed\\appcompat-1.6.1\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}

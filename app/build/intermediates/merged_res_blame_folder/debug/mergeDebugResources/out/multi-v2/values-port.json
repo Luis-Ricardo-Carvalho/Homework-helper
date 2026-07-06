@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "br.edu.ifsulminas.mch.homeworkhelper.app-mergeDebugResources-45:/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\gabri\\.gradle\\caches\\9.4.1\\transforms\\8f0d26fdc91bf5591b2c2e0a39939183\\transformed\\appcompat-1.6.1\\res\\values-port\\values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}
