@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     tools:context="br.edu.ifsulminas.mch.homeworkhelper.LoginActivity">
 
-    <!-- Campo de Email -->
     <TextView
         android:id="@+id/textViewEmail"
         android:layout_width="wrap_content"
@@ -36,10 +35,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email_placeholder"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Campo de Senha -->
     <TextView
         android:id="@+id/textViewPassword"
         android:layout_width="wrap_content"
@@ -67,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password_placeholder"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Botão de Login -->
@@ -86,6 +84,34 @@
         app:layout_constraintTop_toBottomOf="@id/textInputLayoutPassword" />
 
     <!-- Botão de Registro -->
+    <Button
+        android:id="@+id/buttonRegister"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:text="Criar Conta"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonLogin" />
 
     <!-- Botão de Recuperar Senha -->
+    <Button
+        android:id="@+id/buttonForgotPassword"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Esqueci minha senha"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonRegister" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

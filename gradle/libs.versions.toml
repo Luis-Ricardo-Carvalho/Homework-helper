@@ -1,5 +1,5 @@
 [versions]
-agp = "9.1.1"
+agp = "9.2.1"
 googleApiClientAndroid = "2.9.0"
 googleApiServicesClassroom = "v1-rev20240315-2.0.0"
 junit = "4.13.2"

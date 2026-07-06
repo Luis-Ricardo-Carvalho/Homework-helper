@@ -84,6 +84,8 @@
             </meta-data>
         </activity>
 
+        <activity android:name=".RegisterActivity" />
+
         <activity
             android:name=".FormActivity"
             android:exported="false">
